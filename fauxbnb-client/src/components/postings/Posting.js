@@ -2,11 +2,14 @@ import React from 'react';
 
 const Posting = ({ post }) => {
 
-    console.log(post)
     return (
-        <div>
+        <p>
+            {post.title} - 
+            {post.description} - 
+            ${post.price} - 
+            {post.availability} - 
             
-        </div>
+        </p>
     );
 };
 
