@@ -1,12 +1,13 @@
 import React from 'react';
 
 import Home from './Home'
+import Router from '../Router'
 
 const App = () => {
     return (
-        <div>
-            <Home />
-        </div>
+        <>
+            <Router />
+        </>
     );
 };
 
