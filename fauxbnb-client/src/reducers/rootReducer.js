@@ -1,7 +1,7 @@
-import { combineReducer } from 'redux'
+import { combineReducers } from 'redux'
 
-import { postingsReducer } from './postingsReducer'
+import { postingsReducer as postings } from './postingsReducer'
 
-export const rootReducer = combineReducer({
-    postings: postingsReducer
+export const rootReducer = combineReducers({
+    postings
 })

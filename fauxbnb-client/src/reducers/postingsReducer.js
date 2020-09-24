@@ -1,4 +1,4 @@
-export const postingsReducer = (state = { postings: []}, action) => {
+export const postingsReducer = (state = [], action) => {
     switch(action.type){
         default:
             return state
