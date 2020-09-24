@@ -4,18 +4,24 @@ import { connect } from 'react-redux'
 import PostingList from './PostingList'
 import { fetchPostings } from '../../actions/postingsActions'
 
-const Postings = ({ fetchPostings }) => {
+const Postings = ({ fetchPostings, postings }) => {
 
     useEffect(() => {
         fetchPostings()
-    })
+    }, [])
 
     return (
         <>
-            {/* <PostingList/> */}
+            <PostingList postings={postings}/>
         </>
     );
 };
 
-export default connect(null, {fetchPostings})(Postings);
+const mapStateToProps = state => {
+    return {
+        postings: state.postings
+    }
+}
+
+export default connect(mapStateToProps, {fetchPostings})(Postings);
 

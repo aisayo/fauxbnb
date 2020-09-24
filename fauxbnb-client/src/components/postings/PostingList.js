@@ -2,9 +2,9 @@ import React from 'react';
 
 import Posting from './Posting'
 
-const PostingList = ({ posts }) => {
+const PostingList = ({ postings }) => {
 
-    return <> { posts.map(post => <Posting key={post.id} post={post} />) } </>
+    return <> { postings.map(post => <Posting key={post.id} post={post} />) } </>
     
 };
 
