@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 
 import PostingList from './PostingList'
+import PostingForm from './PostingForm'
 import { fetchPostings } from '../../actions/postingsActions'
 
 const Postings = ({ fetchPostings, postings }) => {
@@ -13,6 +14,7 @@ const Postings = ({ fetchPostings, postings }) => {
     return (
         <>
             <PostingList postings={postings}/>
+            <PostingForm />
         </>
     );
 };
