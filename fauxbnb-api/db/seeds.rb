@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Posting.create([
-    {title: 'Testing', description: 'testing', price: '100.00', availability: '9/02/2020'},
-    {title: 'Testing1', description: 'testing1', price: '100.00', availability: '9/03/2020'},
-    {title: 'Testing2', description: 'testing2', price: '100.00', availability: '9/04/2020'}
-])
+# Posting.create([
+#     {title: 'Testing', description: 'testing', price: '100.00', availability: '9/02/2020'},
+#     {title: 'Testing1', description: 'testing1', price: '100.00', availability: '9/03/2020'},
+#     {title: 'Testing2', description: 'testing2', price: '100.00', availability: '9/04/2020'}
+# ])
