@@ -6,18 +6,16 @@ import { addPost } from '../../actions/postingsActions'
 
 const PostingForm = ({ addPost }) => {
 
-    //create one state object
-
     const [formData, setState] = useState({ title: '', description: '', price: '', availability: ''})
 
-    const setPost = (e) => {
+    const setFormData = (e) => {
         setState({
             ...formData,
             [e.target.name]: e.target.value
         })
     }
 
-    const createPosting = e => {
+    const createPost = e => {
         e.preventDefault()
         addPost(formData)
         resetForm()
@@ -33,25 +31,25 @@ const PostingForm = ({ addPost }) => {
     }
 
     return (
-        <form onSubmit={createPosting}>
+        <form onSubmit={createPost}>
             <TextField 
                 type='text' 
                 value={formData.title} 
-                onChange={setPost}
+                onChange={setFormData}
                 name="title"
             />
 
             <TextField 
                 type='text' 
                 value={formData.description} 
-                onChange={setPost}
+                onChange={setFormData}
                 name="description"
             />
 
             <TextField 
                 type='text' 
                 value={formData.price} 
-                onChange={setPost}
+                onChange={setFormData}
                 name="price"
 
             />      
@@ -59,7 +57,7 @@ const PostingForm = ({ addPost }) => {
             <TextField 
                 type='text' 
                 value={formData.availability} 
-                onChange={setPost}
+                onChange={setFormData}
                 name="availability"
 
             />  
