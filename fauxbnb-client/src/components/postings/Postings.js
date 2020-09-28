@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import PostingList from './PostingList'
-import PostingForm from './PostingForm'
 import { fetchPosts } from '../../actions/postingsActions'
 
 const Postings = ({ fetchPosts, postings }) => {
