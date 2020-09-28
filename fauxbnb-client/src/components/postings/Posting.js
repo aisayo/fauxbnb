@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
-const Posting = ({ post }) => {
+import { deletePost } from '../../actions/postingsActions'
+
+const Posting = ({ post, deletePost }) => {
 
     return (
         <p>
@@ -8,9 +11,10 @@ const Posting = ({ post }) => {
             {post.description} - 
             ${post.price} - 
             {post.availability} - 
+            <button onClick={() => deletePost(post)}>Delete</button>
             
         </p>
     );
 };
 
-export default Posting;
+export default connect(null, { deletePost })(Posting);

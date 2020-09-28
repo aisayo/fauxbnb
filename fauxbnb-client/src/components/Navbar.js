@@ -8,7 +8,7 @@ const Navbar = () => {
                 Home
             </NavLink> |
 
-            <NavLink exact activeStyle={{ color: 'blue'}} to='/postings'>
+            <NavLink exact activeStyle={{ color: 'blue'}} to='/posts'>
                 Postings
             </NavLink> |  
 

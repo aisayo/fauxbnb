@@ -1,20 +1,21 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import PostingList from './PostingList'
 import PostingForm from './PostingForm'
-import { fetchPostings } from '../../actions/postingsActions'
+import { fetchPosts } from '../../actions/postingsActions'
 
-const Postings = ({ fetchPostings, postings }) => {
+const Postings = ({ fetchPosts, postings }) => {
 
     useEffect(() => {
-        fetchPostings()
+        fetchPosts()
     }, [])
 
     return (
         <>
             <PostingList postings={postings}/>
-            <PostingForm />
+            <Link to='/posts/new'>Add Listing</Link>
         </>
     );
 };
@@ -25,5 +26,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {fetchPostings})(Postings);
+export default connect(mapStateToProps, {fetchPosts})(Postings);
 
