@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux'
 
 import TextField from '../common/TextField'
+import { addPost } from '../../actions/postingsActions'
 
-const PostingForm = () => {
+const PostingForm = ({ addPost }) => {
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
     const [availability, setAvailability] = useState('')
 
+    const createPosting = e => {
+        const post = {
+            title,
+            description,
+            price,
+            availability
+        }
+        e.preventDefault()
+        addPost(post)
+    }
+
     return (
-        <form>
+        <form onSubmit={createPosting}>
             <TextField 
                 type='text' 
                 value={title} 
@@ -44,4 +57,4 @@ const PostingForm = () => {
     );
 };
 
-export default PostingForm;
+export default connect(null, { addPost })(PostingForm);

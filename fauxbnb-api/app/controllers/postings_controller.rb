@@ -46,6 +46,6 @@ class PostingsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def posting_params
-      params.fetch(:posting, {})
+      params.require(:posting).permit(:title, :description, :price, :availability)
     end
 end
