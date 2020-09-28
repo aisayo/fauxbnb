@@ -6,46 +6,62 @@ import { addPost } from '../../actions/postingsActions'
 
 const PostingForm = ({ addPost }) => {
 
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-    const [price, setPrice] = useState('')
-    const [availability, setAvailability] = useState('')
+    //create one state object
+
+    const [formData, setState] = useState({ title: '', description: '', price: '', availability: ''})
+
+    const setPost = (e) => {
+        setState({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
 
     const createPosting = e => {
-        const post = {
-            title,
-            description,
-            price,
-            availability
-        }
         e.preventDefault()
-        addPost(post)
+        addPost(formData)
+        resetForm()
+    }
+
+    const resetForm = () => {
+        setState({
+            title: '', 
+            description: '', 
+            price: '', 
+            availability: ''
+        })
     }
 
     return (
         <form onSubmit={createPosting}>
             <TextField 
                 type='text' 
-                value={title} 
-                onChange={(e) => {setTitle(e.target.value)}} 
+                value={formData.title} 
+                onChange={setPost}
+                name="title"
             />
 
             <TextField 
                 type='text' 
-                value={description} 
-                onChange={(e) => {setDescription(e.target.value)}} 
+                value={formData.description} 
+                onChange={setPost}
+                name="description"
             />
 
             <TextField 
                 type='text' 
-                value={price} 
-                onChange={(e) => {setPrice(e.target.value)}} 
+                value={formData.price} 
+                onChange={setPost}
+                name="price"
+
             />      
 
             <TextField 
                 type='text' 
-                value={availability} 
-                onChange={(e) => {setAvailability(e.target.value)}} 
+                value={formData.availability} 
+                onChange={setPost}
+                name="availability"
+
             />  
 
             <TextField 
