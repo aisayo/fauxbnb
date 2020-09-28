@@ -8,7 +8,7 @@ const UserLogin = () => {
     const [password, setPassword] = useState('')
 
     return (
-       <form>
+       <form style={loginStyle}>
 
            <label>Email: </label>
            <TextField 
@@ -40,3 +40,8 @@ const UserLogin = () => {
 
 export default UserLogin;
 
+const loginStyle = {
+    border: 'solid',
+    height: 'auto',
+    width: 'auto'
+}
