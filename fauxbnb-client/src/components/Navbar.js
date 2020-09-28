@@ -10,7 +10,15 @@ const Navbar = () => {
 
             <NavLink exact activeStyle={{ color: 'blue'}} to='/postings'>
                 Postings
-            </NavLink> |      
+            </NavLink> |  
+
+            <NavLink exact activeStyle={{ color: 'blue'}} to='/users/login'>
+                Login
+            </NavLink> |  
+
+            <NavLink exact activeStyle={{ color: 'blue'}} to='/users/signup'>
+                Register
+            </NavLink> |  
         </>
     );
 };
