@@ -6,7 +6,16 @@ import { addPost } from '../../actions/postingsActions'
 
 const PostingForm = ({ addPost }) => {
 
-    const [formData, setState] = useState({ title: '', description: '', price: '', availability: ''})
+    const [formData, setState] = useState(
+        { 
+            title: '', 
+            description: '', 
+            price: '', 
+            availability: '',
+            location: '',
+            img: ''
+        }
+        )
 
     const setFormData = (e) => {
         setState({
@@ -42,7 +51,7 @@ const PostingForm = ({ addPost }) => {
             <br/>
             <label>Description: </label>
             <TextField 
-                type='text' 
+                type='content' 
                 value={formData.description} 
                 onChange={setFormData}
                 name="description"
@@ -63,8 +72,28 @@ const PostingForm = ({ addPost }) => {
                 value={formData.availability} 
                 onChange={setFormData}
                 name="availability"
+            />
+
+            <br/>
+            <label>Location</label>
+            <TextField 
+                type='text' 
+                value={formData.location} 
+                onChange={setFormData}
+                name="location"
             />  
-            
+
+            <br/>
+            <label>Add an Image</label>
+            <TextField 
+                type='text' 
+                value={formData.img} 
+                onChange={setFormData}
+                name="img"
+            />  
+
+
+
             <br/>
             <TextField 
                 type='submit' 
