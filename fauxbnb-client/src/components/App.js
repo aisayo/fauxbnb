@@ -1,7 +1,7 @@
 import React from 'react';
-import Router from '../Router'
+import Router from '../components/routing/Router'
 
-import Navbar from './Navbar'
+import Navbar from '../components/routing/Navbar'
 
 const App = () => {
     return (
