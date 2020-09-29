@@ -32,36 +32,40 @@ const PostingForm = ({ addPost }) => {
 
     return (
         <form onSubmit={createPost}>
+            <label>Title: </label>
             <TextField 
                 type='text' 
                 value={formData.title} 
                 onChange={setFormData}
                 name="title"
             />
-
+            <br/>
+            <label>Description: </label>
             <TextField 
                 type='text' 
                 value={formData.description} 
                 onChange={setFormData}
                 name="description"
             />
-
+            <br/>
+            <label>Price: </label>
             <TextField 
                 type='text' 
                 value={formData.price} 
                 onChange={setFormData}
                 name="price"
+            />
 
-            />      
-
+            <br/>
+            <label>Availability</label>
             <TextField 
                 type='text' 
                 value={formData.availability} 
                 onChange={setFormData}
                 name="availability"
-
             />  
-
+            
+            <br/>
             <TextField 
                 type='submit' 
                 value='Create Post' 
