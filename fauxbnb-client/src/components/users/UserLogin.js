@@ -1,47 +1,53 @@
 import React, { useState } from 'react';
-
-import TextField from '../common/TextField'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 const UserLogin = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
+    
     return (
-       <form style={loginStyle}>
-
-           <label>Email: </label>
-           <TextField 
-                type='text'    
-                value={email}
-                onChange={e => setEmail(e.target.value)}            
-            />
+    <div style={formStyle}>
+       <Form >
+           <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email:</Form.Label>
+                <Form.Control 
+                    type="email" 
+                    placeholder="Enter email" 
+                    value={email}
+                    onChange={e => setEmail(e.target.value)} 
+                />
+            </Form.Group>
 
             <br/>
             <br/>
             
-            <label>Password: </label>
-            <TextField
-                type='password'
-                value={password}
-                onChange={e => setPassword(e.target.value)}            
-            />
+            <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password:</Form.Label>
+                <Form.Control
+                    type='password'
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}            
+                />
+            </Form.Group>
             <br/>
             <br/>
 
-            <input 
-                type='submit'
-                value='Login'                
-            />
+            <Button variant="primary" type="submit">
+                Login               
+            </Button>
 
-       </form>
+       </Form>
+       </div>
     );
 };
 
+const formStyle = { 
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignContent: 'center' 
+}
+
 export default UserLogin;
 
-const loginStyle = {
-    border: 'solid',
-    height: 'auto',
-    width: 'auto'
-}

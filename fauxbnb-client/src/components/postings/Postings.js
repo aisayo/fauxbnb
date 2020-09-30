@@ -9,7 +9,7 @@ const Postings = ({ fetchPosts, postings }) => {
 
     useEffect(() => {
         fetchPosts()
-    }, [postings])
+    }, [fetchPosts])
 
     return (
         <>
