@@ -1,11 +1,12 @@
 import React from 'react';
+import { Image } from 'react-bootstrap'
 
 import UserLogin from './users/UserLogin'
 
 const Home = () => {
     return (
         <>
-            <img alt="HomePage Img" src="https://images.unsplash.com/photo-1566779342022-8e33031b622c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80" />
+            <Image fluid alt="HomePage Img" src="https://images.unsplash.com/photo-1566779342022-8e33031b622c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80" />
             <UserLogin />
         </>
     );
