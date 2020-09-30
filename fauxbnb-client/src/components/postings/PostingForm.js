@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import Form from 'react-bootstrap/Form'
 
 import TextField from '../common/TextField'
 import { addPost } from '../../actions/postingsActions'
@@ -43,7 +42,7 @@ const PostingForm = ({ addPost }) => {
     }
 
     return (
-        <Form onSubmit={createPost}>
+        <form onSubmit={createPost}>
             <label>Title: </label>
             <TextField 
                 type='text' 
@@ -103,7 +102,7 @@ const PostingForm = ({ addPost }) => {
                 value='Create Post' 
             />
             
-            </Form>
+            </form>
     );
 };
 

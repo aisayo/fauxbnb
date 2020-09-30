@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
 const UserLogin = () => {
 
@@ -8,29 +7,28 @@ const UserLogin = () => {
     const [password, setPassword] = useState('')
     
     return (
-    <div style={formStyle}>
-       <Form >
-           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email:</Form.Label>
-                <Form.Control 
+       
+    <div >  
+        <h1>Login</h1>      
+       <form >
+           <FormGroup controlId="formBasicEmail">
+                <FormControl 
                     type="email" 
-                    placeholder="Enter email" 
                     value={email}
                     onChange={e => setEmail(e.target.value)} 
                 />
-            </Form.Group>
+            </FormGroup>
 
             <br/>
             <br/>
             
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password:</Form.Label>
-                <Form.Control
+            <FormGroup controlId="formBasicPassword">
+                <FormControl
                     type='password'
                     value={password}
                     onChange={e => setPassword(e.target.value)}            
                 />
-            </Form.Group>
+            </FormGroup>
             <br/>
             <br/>
 
@@ -38,16 +36,29 @@ const UserLogin = () => {
                 Login               
             </Button>
 
-       </Form>
+        </form>
        </div>
     );
 };
 
-const formStyle = { 
-    display: 'flex', 
-    justifyContent: 'center', 
-    alignContent: 'center' 
-}
+// const divStyle = {
+//     display: 'flex',
+//     justifyContent: 'center',
+//     marginTop: 50,
+//     flexDirection: 'column'
+
+
+// }
+// const formStyle = { 
+//     border: 'solid',
+//     borderColor: 'lightGray',
+//     paddingTop: 25,
+//     paddingBottom: 25,
+//     paddingRight: 25,
+//     paddingLeft: 25
+
+   
+// }
 
 export default UserLogin;
 
