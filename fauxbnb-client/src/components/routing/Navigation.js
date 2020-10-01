@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
-  Navbar as NavBar,
+  Navbar,
   Nav,
   Form,
   FormControl,
@@ -9,15 +10,21 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 
-const Navbar = () => {
+const Navigation = () => {
   return (
-    <>
-      <NavBar bg="light" variant="light">
-        <NavBar.Brand href="/">FauxBnB</NavBar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link href="/posts">Places</Nav.Link>
-        </Nav>
+    <Navbar bg="light" variant="light" fill expand="lg">
+      <Navbar.Toggle aria-controls="basic-Navbar-nav" />
 
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Brand href="/">FauxBnB</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Nav className="ml-auto">
+          <Nav.Item>
+            <Nav.Link>
+              <Link to="/posts">Posts</Link>
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
         <NavDropdown title="Want to Host?" id="basic-nav-dropdown">
           <NavDropdown.Item href="/users/signup">Signup</NavDropdown.Item>
           <NavDropdown.Item href="/users/login">Login</NavDropdown.Item>
@@ -32,15 +39,9 @@ const Navbar = () => {
           />
           <Button variant="outline-dark">Search</Button>
         </Form>
-      </NavBar>
-    </>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
-const searchStyle = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "flex-end",
-};
-
-export default Navbar;
+export default Navigation;

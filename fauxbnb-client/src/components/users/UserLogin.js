@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl } from "react-bootstrap";
 
 const UserLogin = () => {
 
@@ -40,25 +40,6 @@ const UserLogin = () => {
        </div>
     );
 };
-
-// const divStyle = {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     marginTop: 50,
-//     flexDirection: 'column'
-
-
-// }
-// const formStyle = { 
-//     border: 'solid',
-//     borderColor: 'lightGray',
-//     paddingTop: 25,
-//     paddingBottom: 25,
-//     paddingRight: 25,
-//     paddingLeft: 25
-
-   
-// }
 
 export default UserLogin;
 
