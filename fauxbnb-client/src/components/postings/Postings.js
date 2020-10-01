@@ -14,7 +14,6 @@ const Postings = ({ fetchPosts, postings }) => {
     return (
         <>
             <PostingList postings={postings}/>
-            <Link to='/posts/new'>Add Listing</Link>
         </>
     );
 };
