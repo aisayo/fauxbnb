@@ -3,7 +3,7 @@ import {Form, FormControl, Button} from 'react-bootstrap'
 
 const Searchbar = () => {
     return (
-        <Form inline>
+        <Form inline >
           <FormControl
             type="text"
             className="mr-sm-2"
