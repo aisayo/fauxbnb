@@ -1,14 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Button,
-  NavDropdown,
-} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+
+import Searchbar from "../Searchbar";
 
 const Navigation = () => {
   return (
@@ -30,15 +25,7 @@ const Navigation = () => {
           <NavDropdown.Item href="/users/login">Login</NavDropdown.Item>
           <NavDropdown.Item href="/posts/new">Add a new place</NavDropdown.Item>
         </NavDropdown>
-
-        <Form inline>
-          <FormControl
-            type="text"
-            className="mr-sm-2"
-            placeHolder="Start your search"
-          />
-          <Button variant="outline-dark">Search</Button>
-        </Form>
+        <Searchbar />
       </Navbar.Collapse>
     </Navbar>
   );
