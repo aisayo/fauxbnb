@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button, FormGroup, FormControl } from "react-bootstrap";
 
-const UserSignup = (props) => {
-
-  const title = props.location.pathname === "/users/signup" ? "Sign Up" : "Login" ;
+const UserSignup = ({ location }) => {
+  const title = location.pathname === "/users/signup" ? "Sign Up" : "Login";
 
   const [userData, setUserData] = useState({ email: "", password: "" });
 
