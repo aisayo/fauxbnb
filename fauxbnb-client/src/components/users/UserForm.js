@@ -4,7 +4,11 @@ import { Form, Button, FormGroup, FormControl } from "react-bootstrap";
 const UserSignup = ({ location }) => {
   const title = location.pathname === "/users/signup" ? "Sign Up" : "Login";
 
-  const [userData, setUserData] = useState({ email: "", password: "" });
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+    passwordConf: "",
+  });
 
   const handleUserData = (e) => {
     setUserData({
@@ -40,6 +44,20 @@ const UserSignup = ({ location }) => {
             name="password"
           />
         </FormGroup>
+
+        {title === "Sign Up" ? (
+          <FormGroup controlId="formBasicPasswordConf">
+            <Form.Label>Password Confirmation: </Form.Label>
+
+            <FormControl
+              type="password"
+              value={userData.passwordConf}
+              onChange={handleUserData}
+              name="passwordConf"
+            />
+          </FormGroup>
+        ) : null}
+
         <br />
         <br />
 

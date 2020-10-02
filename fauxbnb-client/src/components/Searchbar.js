@@ -7,7 +7,6 @@ const Searchbar = () => {
           <FormControl
             type="text"
             className="mr-sm-2"
-            
           />
           <Button variant="outline-dark">Search</Button>
         </Form>

@@ -1,27 +1,25 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux'
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 
-import PostingList from './PostingList'
-import { fetchPosts } from '../../actions/postingsActions'
+import PostingList from "./PostingList";
+import { fetchPosts } from "../../actions/postingsActions";
 
 const Postings = ({ fetchPosts, postings }) => {
+  useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
 
-    useEffect(() => {
-        fetchPosts()
-    }, [fetchPosts])
-
-    return (
-        <>
-            <PostingList postings={postings}/>
-        </>
-    );
+  return (
+    <div>
+      <PostingList postings={postings} />
+    </div>
+  );
 };
 
-const mapStateToProps = state => {
-    return {
-        postings: state.postings
-    }
-}
+const mapStateToProps = (state) => {
+  return {
+    postings: state.postings,
+  };
+};
 
-export default connect(mapStateToProps, {fetchPosts})(Postings);
-
+export default connect(mapStateToProps, { fetchPosts })(Postings);

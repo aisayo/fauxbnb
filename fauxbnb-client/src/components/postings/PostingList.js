@@ -5,7 +5,7 @@ import Posting from './Posting'
 const PostingList = ({ postings }) => {
 
     return (
-        <div style={{ marginTop: 20, padding: 30 }}>
+        <div >
             { postings.map(post => <Posting key={post.id} post={post} />) } 
         </div>
     )
