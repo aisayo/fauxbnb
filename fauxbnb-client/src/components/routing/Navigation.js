@@ -14,7 +14,7 @@ const Navigation = () => {
           <NavDropdown title="Want to host?" id="collapsible-nav-dropdown">
             <NavDropdown.Item href="/users/signup">Signup</NavDropdown.Item>
             <NavDropdown.Item href="/users/login"> Login </NavDropdown.Item>
-            <NavDropdown.Item href="/postings/new">Add a new place</NavDropdown.Item>
+            <NavDropdown.Item href="/posts/new">Add a new place</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
