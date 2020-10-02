@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import { Form, Button, FormGroup, FormControl } from "react-bootstrap";
 
-const UserLogin = () => {
+const UserSignup = (props) => {
 
-  const [userData, setUserData] = useState({ email: '', password: ''})
+  const title = props.location.pathname === "/users/signup" ? "Sign Up" : "Login" ;
 
-  const handleUserData = e => {
+  const [userData, setUserData] = useState({ email: "", password: "" });
+
+  const handleUserData = (e) => {
     setUserData({
-        ...userData,
-        [e.target.name]: e.target.value
-    })
-  }
+      ...userData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <div style={divStyle}>
-      <h1>Login</h1>
+      <h1>{title}</h1>
       <Form>
         <FormGroup controlId="formBasicEmail">
           <Form.Label>Email: </Form.Label>
@@ -43,7 +45,7 @@ const UserLogin = () => {
         <br />
 
         <Button variant="light" type="submit">
-          Login
+          {title}
         </Button>
       </Form>
     </div>
@@ -64,5 +66,4 @@ const divStyle = {
   paddingTop: "5%",
   paddingBottom: "5%",
 };
-
-export default UserLogin;
+export default UserSignup;

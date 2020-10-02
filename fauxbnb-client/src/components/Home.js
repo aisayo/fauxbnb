@@ -1,8 +1,6 @@
 import React from 'react';
 import { Image } from 'react-bootstrap'
 
-import UserLogin from './users/UserLogin'
-
 const Home = () => {
     return (
         <>
